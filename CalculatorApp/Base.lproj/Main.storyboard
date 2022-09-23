@@ -69,13 +69,11 @@
                                                     <constraint firstAttribute="width" constant="60" id="NzO-2w-LwY"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted">
+                                                <buttonConfiguration key="configuration" style="tinted" image="percent" catalog="system">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="%"/>
-                                                    </attributedString>
+                                                    <attributedString key="attributedTitle"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                     <color key="baseBackgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
@@ -88,13 +86,11 @@
                                                     <constraint firstAttribute="width" constant="60" id="dJB-Go-5RW"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted">
+                                                <buttonConfiguration key="configuration" style="tinted" image="divide" catalog="system">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
-                                                    <attributedString key="attributedTitle">
-                                                        <fragment content="/"/>
-                                                    </attributedString>
+                                                    <attributedString key="attributedTitle"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                     <color key="baseBackgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
@@ -160,7 +156,7 @@
                                                     <constraint firstAttribute="height" constant="62" id="f39-tz-qYH"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="X">
+                                                <buttonConfiguration key="configuration" style="tinted" image="multiply" catalog="system">
                                                     <backgroundConfiguration key="background"/>
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                     <color key="baseBackgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -236,7 +232,7 @@
                                                     <constraint firstAttribute="width" constant="60" id="mBD-nq-iAv"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="-">
+                                                <buttonConfiguration key="configuration" style="tinted" image="minus" catalog="system" title="">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
@@ -314,7 +310,7 @@
                                                     <constraint firstAttribute="width" constant="60" id="TPR-7u-PCY"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="+">
+                                                <buttonConfiguration key="configuration" style="tinted" image="plus" catalog="system" title="">
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
@@ -375,17 +371,11 @@
                                             <constraint firstAttribute="width" constant="128" id="baK-kI-bRL"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted">
+                                        <buttonConfiguration key="configuration" style="tinted" image="equal" catalog="system">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
-                                            <attributedString key="attributedTitle">
-                                                <fragment content="=">
-                                                    <attributes>
-                                                        <font key="NSFont" size="24" name="Helvetica"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
+                                            <attributedString key="attributedTitle"/>
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" red="0.53725490200000003" green="0.94509803920000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
@@ -417,10 +407,12 @@
                                             <action selector="onNumberPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7xD-Vm-fcu"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="delete.backward" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BXz-VQ-QqY">
-                                        <rect key="frame" x="249" y="40.666666666666629" width="56" height="28"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmG-9a-eCP">
+                                        <rect key="frame" x="253" y="40" width="52" height="35"/>
                                         <color key="tintColor" red="0.1215686351" green="0.12549020350000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </imageView>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="delete.backward" catalog="system" title=""/>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="1wq-aV-h27" secondAttribute="bottom" constant="26" id="6sl-w4-rrj"/>
@@ -429,18 +421,16 @@
                                     <constraint firstItem="JWz-KO-qK2" firstAttribute="leading" secondItem="AQ6-v6-uyR" secondAttribute="leading" id="GRO-Rc-P7n"/>
                                     <constraint firstItem="mu4-Ze-YHW" firstAttribute="leading" secondItem="1wq-aV-h27" secondAttribute="leading" id="LCK-BA-aze"/>
                                     <constraint firstItem="AQ6-v6-uyR" firstAttribute="top" secondItem="JWz-KO-qK2" secondAttribute="bottom" constant="8" symbolic="YES" id="LJO-Z4-vCk"/>
-                                    <constraint firstItem="Fip-HJ-BDk" firstAttribute="top" secondItem="BXz-VQ-QqY" secondAttribute="bottom" constant="21.000000000000028" id="NaY-h4-AaP"/>
                                     <constraint firstItem="p3J-K2-olA" firstAttribute="leading" secondItem="Fip-HJ-BDk" secondAttribute="leading" id="QZs-0W-7Kp"/>
                                     <constraint firstItem="Fip-HJ-BDk" firstAttribute="centerX" secondItem="KJw-bj-149" secondAttribute="centerX" id="Xhk-AV-hpJ"/>
                                     <constraint firstItem="JWz-KO-qK2" firstAttribute="top" secondItem="Fip-HJ-BDk" secondAttribute="bottom" constant="8" symbolic="YES" id="d0n-Dy-Fpd"/>
                                     <constraint firstItem="AQ6-v6-uyR" firstAttribute="leading" secondItem="mu4-Ze-YHW" secondAttribute="leading" id="jY2-pJ-tKX"/>
                                     <constraint firstItem="Fip-HJ-BDk" firstAttribute="leading" secondItem="JWz-KO-qK2" secondAttribute="leading" id="jww-KP-tlt"/>
-                                    <constraint firstItem="BXz-VQ-QqY" firstAttribute="centerY" secondItem="p3J-K2-olA" secondAttribute="centerY" id="thV-4n-CRs"/>
-                                    <constraint firstItem="BXz-VQ-QqY" firstAttribute="trailing" secondItem="Fip-HJ-BDk" secondAttribute="trailing" id="uUM-Ap-OqJ"/>
+                                    <constraint firstItem="lmG-9a-eCP" firstAttribute="trailing" secondItem="Fip-HJ-BDk" secondAttribute="trailing" id="qp0-On-ydn"/>
+                                    <constraint firstItem="Fip-HJ-BDk" firstAttribute="top" secondItem="lmG-9a-eCP" secondAttribute="bottom" constant="16" id="vSE-JM-Zdu"/>
                                     <constraint firstItem="Fip-HJ-BDk" firstAttribute="top" secondItem="p3J-K2-olA" secondAttribute="bottom" constant="6" id="wt2-aT-cCn"/>
                                     <constraint firstItem="f9W-E7-cSr" firstAttribute="top" secondItem="1wq-aV-h27" secondAttribute="top" id="xBF-zN-3y7"/>
                                     <constraint firstItem="1wq-aV-h27" firstAttribute="top" secondItem="mu4-Ze-YHW" secondAttribute="bottom" constant="8" symbolic="YES" id="zP1-12-Rzf"/>
-                                    <constraint firstItem="BXz-VQ-QqY" firstAttribute="leading" secondItem="p3J-K2-olA" secondAttribute="trailing" constant="80" id="zmC-hR-QKb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIV-n4-djd">
@@ -520,6 +510,12 @@
     </scenes>
     <resources>
         <image name="delete.backward" catalog="system" width="128" height="102"/>
+        <image name="divide" catalog="system" width="128" height="101"/>
+        <image name="equal" catalog="system" width="128" height="73"/>
+        <image name="minus" catalog="system" width="128" height="26"/>
+        <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="percent" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
