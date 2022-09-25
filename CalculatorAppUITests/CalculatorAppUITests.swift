@@ -1,9 +1,10 @@
-//
-//  CalculatorAppUITests.swift
-//  CalculatorAppUITests
-//
-//  Created by Krisuv Bohara on 2022-09-21.
-//
+/*
+ File Name: CalculatorAppUITests
+ Author: Krisuv Bohara(), Niraj Nepal(301211100)
+ Date: 2022-09-21
+ Description: Creates an UI for the Calculator App
+ Version: 1.0
+ */
 
 import XCTest
 

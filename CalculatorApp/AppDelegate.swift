@@ -1,9 +1,10 @@
-//
-//  AppDelegate.swift
-//  CalculatorApp
-//
-//  Created by Krisuv Bohara on 2022-09-21.
-//
+/*
+ File Name: AppDelegate
+ Author: Krisuv Bohara(301274636), Niraj Nepal(301211100)
+ Date: 2022-09-21
+ Description: Handles Calculator App Initialization
+ Version: 1.0
+ */
 
 import UIKit
 

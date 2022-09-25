@@ -1,9 +1,10 @@
-//
-//  ViewController.swift
-//  CalculatorApp
-//
-//  Created by Krisuv Bohara on 2022-09-21.
-//
+/*
+ File Name: ViewController
+ Author: Krisuv Bohara(301274636), Niraj Nepal(301211100)
+ Date: 2022-09-21
+ Description: Creates the main UI for the Calculator App
+ Version: 1.0
+ */
 
 import UIKit
 
