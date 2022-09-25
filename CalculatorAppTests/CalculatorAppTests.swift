@@ -1,9 +1,10 @@
-//
-//  CalculatorAppTests.swift
-//  CalculatorAppTests
-//
-//  Created by Krisuv Bohara on 2022-09-21.
-//
+/*
+ File Name: CalculatorAppTests
+ Author: Krisuv Bohara(301274636), Niraj Nepal(301211100)
+ Date: 2022-09-21
+ Description: Test Class for the App
+ Version: 1.0
+ */
 
 import XCTest
 @testable import CalculatorApp
