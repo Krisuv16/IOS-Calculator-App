@@ -57,17 +57,63 @@ class ViewController: UIViewController {
     
     func subtractOperation(lhs: Float, rhs:Float)->Float
     {
-        return lhs - rhs
+        var subValue = lhs - rhs
+        var stringValue : String = "\(subValue)"
+        workings = ""
+        calWorkings.text = ""
+        addValuer(vals: stringValue)
+        finalResult.text = stringValue
+        leftOp = ""
+        rightOp = ""
+        leftOperand = 0.0
+        rightOperand = 0.0
+        return subValue
     }
     
     func multiplyOperation(lhs: Float, rhs:Float)->Float
     {
-        return lhs * rhs
+        var mulValue = lhs * rhs
+        var stringValue : String = "\(mulValue)"
+        workings = ""
+        calWorkings.text = ""
+        addValuer(vals: stringValue)
+        finalResult.text = stringValue
+        leftOp = ""
+        rightOp = ""
+        leftOperand = 0.0
+        rightOperand = 0.0
+        return mulValue
     }
     
     func divideOperation(lhs: Float, rhs:Float)->Float
     {
-        return lhs * rhs
+        var divideValue = lhs / rhs
+        var stringValue : String = "\(divideValue)"
+        workings = ""
+        calWorkings.text = ""
+        addValuer(vals: stringValue)
+        finalResult.text = stringValue
+        leftOp = ""
+        rightOp = ""
+        leftOperand = 0.0
+        rightOperand = 0.0
+        return divideValue
+    }
+    
+    func percentageOperation(operands: Float)->Float
+    {
+        var percentageValue = operands / 100
+        var stringValue: String = "\(percentageValue)"
+        workings = ""
+        calWorkings.text = ""
+        addValuer(vals: stringValue)
+        finalResult.text = stringValue
+        leftOp = ""
+        rightOp = ""
+        leftOperand = 0.0
+        rightOperand = 0.0
+        return percentageValue
+        
     }
     
     func Evaluate()
@@ -163,8 +209,6 @@ class ViewController: UIViewController {
                     leftOp = resultLabelText
                     leftOperand = Float(leftOp)!
                 }
-                print(rightOperand)
-                print(leftOperand)
                 
                 if(rightOperand != 0.0 && leftOperand != 0.0){
                  addOperation(lhs: leftOperand, rhs: rightOperand)
@@ -182,6 +226,18 @@ class ViewController: UIViewController {
             }else
             {
                 addValuer(vals: "-")
+                
+                if(leftOp != ""){
+                    rightOp = (resultLabelText!.components(separatedBy: "-").last!)
+                    rightOperand = Float(rightOp)!
+                }else{
+                    leftOp = resultLabelText!
+                    leftOperand = Float(leftOp)!
+                }
+                
+                if(rightOperand != 0.0 && leftOperand != 0.0){
+                 subtractOperation(lhs: leftOperand, rhs: rightOperand)
+                }
             }
         }
     }
@@ -196,6 +252,18 @@ class ViewController: UIViewController {
             }else
             {
                 addValuer(vals: "*")
+                
+                if(leftOp != ""){
+                    rightOp = (resultLabelText!.components(separatedBy: "*").last!)
+                    rightOperand = Float(rightOp)!
+                }else{
+                    leftOp = resultLabelText!
+                    leftOperand = Float(leftOp)!
+                }
+                
+                if(rightOperand != 0.0 && leftOperand != 0.0){
+                 multiplyOperation(lhs: leftOperand, rhs: rightOperand)
+                }
             }
         }
     }
@@ -208,6 +276,18 @@ class ViewController: UIViewController {
             }else
             {
                 addValuer(vals: "÷")
+                
+                if(leftOp != ""){
+                    rightOp = (resultLabelText!.components(separatedBy: "÷").last!)
+                    rightOperand = Float(rightOp)!
+                }else{
+                    leftOp = resultLabelText!
+                    leftOperand = Float(leftOp)!
+                }
+                
+                if(rightOperand != 0.0 && leftOperand != 0.0){
+                    divideOperation(lhs: leftOperand, rhs: rightOperand)
+                }
             }
         }
     }
@@ -220,7 +300,13 @@ class ViewController: UIViewController {
                 
             }else
             {
-                addValuer(vals: "%")
+                leftOp = resultLabelText!
+                leftOperand = Float(leftOp)!
+                
+                if(leftOperand != 0.0){
+                    percentageOperation(operands: leftOperand)
+                }
+                
             }
         }
     }
@@ -239,5 +325,14 @@ class ViewController: UIViewController {
         Evaluate()
     }
     
+    @IBAction func onToggleBtnPressed(_ sender: UIButton) {
+        if(calWorkings.text != "0" && calWorkings.text != ""){
+            if(!calWorkings.text!.contains("-")){
+                calWorkings.text!.insert("-", at: calWorkings.text!.startIndex)
+            }else{
+                calWorkings.text!.remove(at: calWorkings.text!.startIndex)
+            }
+        }
+    }
 }
 
