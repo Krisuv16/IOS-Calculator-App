@@ -427,6 +427,9 @@
                                         <color key="tintColor" red="0.1215686351" green="0.12549020350000001" blue="0.1294117719" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="delete.backward" catalog="system" title=""/>
+                                        <connections>
+                                            <action selector="onBackBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXd-11-xza"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>

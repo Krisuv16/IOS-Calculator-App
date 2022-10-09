@@ -193,7 +193,12 @@ class ViewController: UIViewController {
         let resultLabelText = calWorkings.text
         if(resultLabelText != "+")
         {
-            addValuer(vals: "+")
+            if(resultLabelText?.last! == "+"){
+                
+            }else
+            {
+                addValuer(vals: "+")
+            }
         }
     }
     
@@ -201,7 +206,12 @@ class ViewController: UIViewController {
         let resultLabelText = calWorkings.text
         if(resultLabelText != "-")
         {
-            addValuer(vals: "-")
+            if(resultLabelText?.last! == "-"){
+                
+            }else
+            {
+                addValuer(vals: "-")
+            }
         }
     }
     
@@ -210,7 +220,12 @@ class ViewController: UIViewController {
         let resultLabelText = calWorkings.text
         if(resultLabelText != "*")
         {
-            addValuer(vals: "*")
+            if(resultLabelText?.last! == "*"){
+                
+            }else
+            {
+                addValuer(vals: "*")
+            }
         }
     }
     
@@ -218,7 +233,12 @@ class ViewController: UIViewController {
         let resultLabelText = calWorkings.text
         if(resultLabelText != "÷")
         {
-            addValuer(vals: "÷")
+            if(resultLabelText?.last! == "÷"){
+                
+            }else
+            {
+                addValuer(vals: "÷")
+            }
         }
     }
     
@@ -226,10 +246,23 @@ class ViewController: UIViewController {
         let resultLabelText = calWorkings.text
         if(resultLabelText != "%")
         {
-            addValuer(vals: "%")
+            if(resultLabelText?.last! == "%"){
+                
+            }else
+            {
+                addValuer(vals: "%")
+            }
         }
     }
     
+    @IBAction func onBackBtnPressed(_ sender: UIButton) {
+        
+        if(!workings.isEmpty){
+            workings.removeLast()
+            calWorkings.text?.removeLast()
+        }
+    }
+    //    && resultLabelText?.last! == "÷" && resultLabelText?.last! == "*" && resultLabelText?.last! == "+" && resultLabelText?.last == "-"
     
 }
 
