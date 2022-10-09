@@ -38,7 +38,6 @@ class ViewController: UIViewController {
     
     func addOperation(lhs: Float, rhs:Float)->Float
     {
-
         return lhs + rhs
     }
     
@@ -87,7 +86,6 @@ class ViewController: UIViewController {
             haveLeftOperand = true
             leftOperand = Float(resultLabelText!)!
             resultLabelReady = false
-            
         }
         else
         {
@@ -147,35 +145,21 @@ class ViewController: UIViewController {
         case "1":
                 addValuer(vals: "1")
         case "2":
-            
                 addValuer(vals: "2")
-            
         case "3":
-           
                 addValuer(vals: "3")
-            
         case "4":
-           
                 addValuer(vals: "4")
-            
         case "5":
                 addValuer(vals: "5")
-            
         case "6":
-           
                 addValuer(vals: "6")
-           
         case "7":
-         
                 addValuer(vals: "7")
-            
         case "8":
-            
                 addValuer(vals: "8")
-            
         case "9":
                 addValuer(vals: "9")
-            
         case ".":
             if(resultLabelText != ".")
             {
@@ -198,6 +182,17 @@ class ViewController: UIViewController {
             }else
             {
                 addValuer(vals: "+")
+                if(!haveLeftOperand)
+                {
+                    haveLeftOperand = true
+                    leftOperand = Float(resultLabelText!)!
+                    resultLabelReady = false
+                    print(leftOperand)
+                }
+                else {
+                    rightOperand = Float(resultLabelText!)!
+                    haveRightOperand = true
+                }
             }
         }
     }
@@ -233,8 +228,7 @@ class ViewController: UIViewController {
         let resultLabelText = calWorkings.text
         if(resultLabelText != "÷")
         {
-            if(resultLabelText?.last! == "÷"){
-                
+            if(resultLabelText?.last == "÷"){
             }else
             {
                 addValuer(vals: "÷")
@@ -255,14 +249,19 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func onBackBtnPressed(_ sender: UIButton) {
-        
+    @IBAction func onBackBtnPressed(_ sender: UIButton)
+    {
         if(!workings.isEmpty){
             workings.removeLast()
             calWorkings.text?.removeLast()
         }
     }
     //    && resultLabelText?.last! == "÷" && resultLabelText?.last! == "*" && resultLabelText?.last! == "+" && resultLabelText?.last == "-"
+    
+    
+    @IBAction func onEqualBtnPressed(_ sender: UIButton) {
+        Evaluate()
+    }
     
 }
 

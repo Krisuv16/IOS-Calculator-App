@@ -394,6 +394,9 @@
                                             <color key="baseForegroundColor" systemColor="labelColor"/>
                                             <color key="baseBackgroundColor" red="0.53725490200000003" green="0.94509803920000002" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onEqualBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h94-P7-BLh"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p3J-K2-olA">
                                         <rect key="frame" x="41" y="23" width="128" height="62"/>
