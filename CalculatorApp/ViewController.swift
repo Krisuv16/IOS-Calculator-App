@@ -182,17 +182,33 @@ class ViewController: UIViewController {
             }else
             {
                 addValuer(vals: "+")
-                if(!haveLeftOperand)
-                {
-                    haveLeftOperand = true
-                    leftOperand = Float(resultLabelText!)!
-                    resultLabelReady = false
-                    print(leftOperand)
+                
+                var leftOp = ""
+                var rightOp = ""
+                
+                if(leftOp.isEmpty){
+                   leftOp = resultLabelText!
+                    print(leftOp)
+                }else{
+//                    rightOp = resultLabelText.
+                    if let i = resultLabelText!.firstIndex(of: "+"){
+                        print(i.utf16Offset(in: resultLabelText!))
+                    }
+                
+                    
                 }
-                else {
-                    rightOperand = Float(resultLabelText!)!
-                    haveRightOperand = true
-                }
+                
+//                if(!haveLeftOperand)
+//                {
+//                    haveLeftOperand = true
+//                    leftOperand = Float(resultLabelText!)!
+//                    resultLabelReady = false
+//                }
+//                else {
+//
+////                    rightOperand = Float(resultLabelText)!
+////                    haveRightOperand = true
+//                }
             }
         }
     }
