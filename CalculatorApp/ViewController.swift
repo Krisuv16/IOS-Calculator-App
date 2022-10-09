@@ -18,9 +18,12 @@ class ViewController: UIViewController {
     var activeOperator: String = ""
     var workings: String = ""
     var workingsDel : String = ""
+    var leftOp = ""
+    var rightOp = ""
     
     @IBOutlet var viewBorder: [UIView]!
     
+    @IBOutlet weak var finalResult: UILabel!
     @IBOutlet weak var calWorkings: UILabel!
     @IBOutlet var calBtn: [UIButton]!
     
@@ -39,7 +42,17 @@ class ViewController: UIViewController {
     
     func addOperation(lhs: Float, rhs:Float)->Float
     {
-        return lhs + rhs
+        var addValue = lhs + rhs
+        var stringValue : String = "\(addValue)"
+        workings = ""
+        calWorkings.text = ""
+        addValuer(vals: stringValue)
+        finalResult.text = stringValue
+        leftOp = ""
+        rightOp = ""
+        leftOperand = 0.0
+        rightOperand = 0.0
+        return addValue
     }
     
     func subtractOperation(lhs: Float, rhs:Float)->Float
@@ -76,49 +89,6 @@ class ViewController: UIViewController {
         print(result)
     }
     
-    @IBAction func operatorPressed(_ sender: UIButton )
-    {
-        let button = sender as UIButton
-        let currentInput = button.titleLabel!.text
-        let resultLabelText = calWorkings.text
-        
-        if(!haveLeftOperand)
-        {
-            haveLeftOperand = true
-            leftOperand = Float(resultLabelText!)!
-            resultLabelReady = false
-        }
-        else
-        {
-            rightOperand = Float(resultLabelText!)!
-            haveRightOperand = true
-        }
-        
-        if(haveLeftOperand && haveRightOperand)
-        {
-            Evaluate()
-            leftOperand = result
-            rightOperand = 0.0
-            resultLabelReady = false
-        }
-        
-        switch currentInput
-        {
-        case "+":
-            activeOperator = "+"
-        case "-":
-            activeOperator = "-"
-        case "X":
-            activeOperator = "X"
-        case "/":
-            activeOperator = "/"
-        case "=":
-            Evaluate()
-        default:
-            print("")
-        }
-    }
-
     
     func addValuer (vals : String){
 
@@ -128,10 +98,10 @@ class ViewController: UIViewController {
             calWorkings.text = workings
         }
     }
+    
     func clearValues(){
         workings = ""
         calWorkings.text = ""
-        
     }
     
     
@@ -173,8 +143,7 @@ class ViewController: UIViewController {
         }
     }
     
-    var leftOp = ""
-    var rightOp = ""
+
     
     @IBAction func onAddBtnPressed(_ sender: UIButton) {
 
@@ -189,8 +158,16 @@ class ViewController: UIViewController {
 
                 if(leftOp != ""){
                     rightOp = (resultLabelText.components(separatedBy: "+").last!)
+                    rightOperand = Float(rightOp)!
                 }else{
                     leftOp = resultLabelText
+                    leftOperand = Float(leftOp)!
+                }
+                print(rightOperand)
+                print(leftOperand)
+                
+                if(rightOperand != 0.0 && leftOperand != 0.0){
+                 addOperation(lhs: leftOperand, rhs: rightOperand)
                 }
             }
         }

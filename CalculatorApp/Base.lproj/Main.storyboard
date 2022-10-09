@@ -500,6 +500,7 @@
                     </view>
                     <connections>
                         <outlet property="calWorkings" destination="Ceu-7B-OwV" id="jzt-ty-CpH"/>
+                        <outlet property="finalResult" destination="1zj-PF-lmC" id="74U-og-kYk"/>
                         <outletCollection property="viewBorder" destination="KJw-bj-149" collectionClass="NSMutableArray" id="eM5-UO-tqP"/>
                         <outletCollection property="calBtn" destination="EpJ-fQ-lSN" collectionClass="NSMutableArray" id="YaJ-fR-wa8"/>
                         <outletCollection property="calBtn" destination="BfE-Le-lH7" collectionClass="NSMutableArray" id="KtO-lN-UIc"/>
