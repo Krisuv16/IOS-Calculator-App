@@ -122,8 +122,12 @@ class ViewController: UIViewController {
 
     
     func addValuer (vals : String){
-        workings = workings + vals
-        calWorkings.text = workings
+
+        if(workings.count <= 19)
+        {
+            workings = workings + vals
+            calWorkings.text = workings
+        }
     }
     func clearValues(){
         workings = ""
@@ -139,59 +143,47 @@ class ViewController: UIViewController {
         switch currentInput
         {
         case "0":
-            if(resultLabelText != "0")
-            {
+          
                 addValuer(vals: "0")
-            }
+            
         case "1":
-            if(resultLabelText != "1")
-            {
+           
                 addValuer(vals: "1")
-            }
+            
         case "2":
-            if(resultLabelText != "2")
-            {
+            
                 addValuer(vals: "2")
-            }
+            
         case "3":
-            if(resultLabelText != "3")
-            {
+           
                 addValuer(vals: "3")
-            }
+            
         case "4":
-            if(resultLabelText != "4")
-            {
+           
                 addValuer(vals: "4")
-            }
+            
         case "5":
-            if(resultLabelText != "5")
-            {
                 addValuer(vals: "5")
-            }
+            
         case "6":
-            if(resultLabelText != "6")
-            {
+           
                 addValuer(vals: "6")
-            }
+           
         case "7":
-            if(resultLabelText != "7")
-            {
+         
                 addValuer(vals: "7")
-            }
+            
         case "8":
-            if(resultLabelText != "8")
-            {
+            
                 addValuer(vals: "8")
-            }
+            
         case "9":
-            if(resultLabelText != "9")
-            {
                 addValuer(vals: "9")
-            }
+            
         case ".":
             if(resultLabelText != ".")
             {
-                addValuer(vals: "9")
+                addValuer(vals: ".")
             }
         case "Clear":
             clearValues()
@@ -199,5 +191,16 @@ class ViewController: UIViewController {
             print("")
         }
     }
+    
+
+    @IBAction func onAddBtnPressed(_ sender: UIButton) {
+//        let resultLabelText = calWorkings.text
+//        if(resultLabelText != "+")
+//        {
+//            addValuer(vals: "+")
+//        }
+        print(workings.count)
+    }
+    
 }
 
