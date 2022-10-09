@@ -195,8 +195,41 @@ class ViewController: UIViewController {
         {
             addValuer(vals: "+")
         }
-        print(workings.count)
     }
+    
+    @IBAction func onMinusBtnPressed(_ sender: UIButton) {
+        let resultLabelText = calWorkings.text
+        if(resultLabelText != "-")
+        {
+            addValuer(vals: "-")
+        }
+    }
+    
+    
+    @IBAction func onMultiplyBtnPressed(_ sender: UIButton) {
+        let resultLabelText = calWorkings.text
+        if(resultLabelText != "*")
+        {
+            addValuer(vals: "*")
+        }
+    }
+    
+    @IBAction func onDivideBtnPressed(_ sender: UIButton) {
+        let resultLabelText = calWorkings.text
+        if(resultLabelText != "÷")
+        {
+            addValuer(vals: "÷")
+        }
+    }
+    
+    @IBAction func onPercentBtnPressed(_ sender: UIButton) {
+        let resultLabelText = calWorkings.text
+        if(resultLabelText != "%")
+        {
+            addValuer(vals: "%")
+        }
+    }
+    
     
 }
 
