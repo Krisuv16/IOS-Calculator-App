@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var result: Float = 0.0
     var activeOperator: String = ""
     var workings: String = ""
+    var workingsDel : String = ""
     
     @IBOutlet var viewBorder: [UIView]!
     
@@ -124,6 +125,7 @@ class ViewController: UIViewController {
         if(workings.count <= 19)
         {
             workings = workings + vals
+            workingsDel = workings
             calWorkings.text = workings
         }
     }
@@ -172,43 +174,30 @@ class ViewController: UIViewController {
         }
     }
     
-
+    var leftOp = ""
+    var rightOp = ""
+    
     @IBAction func onAddBtnPressed(_ sender: UIButton) {
-        let resultLabelText = calWorkings.text
+
+        let resultLabelText = workings
         if(resultLabelText != "+")
         {
-            if(resultLabelText?.last! == "+"){
-                
+            if(resultLabelText.last! == "+"){
+
             }else
             {
                 addValuer(vals: "+")
-                
-                var leftOp = ""
-                var rightOp = ""
-                
-                if(leftOp.isEmpty){
-                   leftOp = resultLabelText!
-                    print(leftOp)
+
+                if(leftOp != ""){
+                    rightOp = resultLabelText
                 }else{
-//                    rightOp = resultLabelText.
-                    if let i = resultLabelText!.firstIndex(of: "+"){
-                        print(i.utf16Offset(in: resultLabelText!))
-                    }
-                
-                    
+                    leftOp = resultLabelText
                 }
-                
-//                if(!haveLeftOperand)
-//                {
-//                    haveLeftOperand = true
-//                    leftOperand = Float(resultLabelText!)!
-//                    resultLabelReady = false
-//                }
-//                else {
-//
-////                    rightOperand = Float(resultLabelText)!
-////                    haveRightOperand = true
-//                }
+
+                print("Right")
+                print(rightOp)
+                print("Left")
+                print(leftOp)
             }
         }
     }
