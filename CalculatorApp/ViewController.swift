@@ -143,13 +143,9 @@ class ViewController: UIViewController {
         switch currentInput
         {
         case "0":
-          
                 addValuer(vals: "0")
-            
         case "1":
-           
                 addValuer(vals: "1")
-            
         case "2":
             
                 addValuer(vals: "2")
@@ -194,11 +190,11 @@ class ViewController: UIViewController {
     
 
     @IBAction func onAddBtnPressed(_ sender: UIButton) {
-//        let resultLabelText = calWorkings.text
-//        if(resultLabelText != "+")
-//        {
-//            addValuer(vals: "+")
-//        }
+        let resultLabelText = calWorkings.text
+        if(resultLabelText != "+")
+        {
+            addValuer(vals: "+")
+        }
         print(workings.count)
     }
     

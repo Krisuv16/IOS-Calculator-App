@@ -77,9 +77,6 @@
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                     <color key="baseBackgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="onOperatorsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qWL-v6-afe"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpJ-fQ-lSN">
                                                 <rect key="frame" x="204" y="0.0" width="60" height="62"/>
@@ -97,9 +94,6 @@
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                     <color key="baseBackgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="onOperatorsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k68-7O-FuB"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -167,9 +161,6 @@
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                     <color key="baseBackgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="onOperatorsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4SM-vF-DGC"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -248,9 +239,6 @@
                                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                                     <color key="baseBackgroundColor" red="0.97254901959999995" green="0.98039215690000003" blue="0.58039215690000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
-                                                <connections>
-                                                    <action selector="onOperatorsPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0ED-aE-0oS"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
