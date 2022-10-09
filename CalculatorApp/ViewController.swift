@@ -125,7 +125,6 @@ class ViewController: UIViewController {
         if(workings.count <= 19)
         {
             workings = workings + vals
-            workingsDel = workings
             calWorkings.text = workings
         }
     }
@@ -189,15 +188,10 @@ class ViewController: UIViewController {
                 addValuer(vals: "+")
 
                 if(leftOp != ""){
-                    rightOp = resultLabelText
+                    rightOp = (resultLabelText.components(separatedBy: "+").last!)
                 }else{
                     leftOp = resultLabelText
                 }
-
-                print("Right")
-                print(rightOp)
-                print("Left")
-                print(leftOp)
             }
         }
     }
