@@ -9,18 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var leftOperand: Float = 0.0
-    var rightOperand: Float = 0.0
-    var haveLeftOperand: Bool = false
-    var haveRightOperand: Bool = false
-    var resultLabelReady: Bool = true
-    var result: Float = 0.0
-    var activeOperator: String = ""
-    var workings: String = ""
     
+    var leftOperand : Float = 0.0 //for left operation
+    var rightOperand : Float = 0.0 //for right operation
+    var result : Float = 0.0 //for the last result of the operations
+    var clickedOperator = ""
+    var activeOperator = ""
+    var resetLabel = true
+    
+    
+    @IBOutlet weak var ResultLabel: UILabel!
     @IBOutlet var viewBorder: [UIView]!
-    
-    @IBOutlet weak var calWorkings: UILabel!
     @IBOutlet var calBtn: [UIButton]!
     
     
@@ -35,169 +34,108 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    func addOperation(lhs: Float, rhs:Float)->Float
-    {
-
-        return lhs + rhs
-    }
-    
-    func subtractOperation(lhs: Float, rhs:Float)->Float
-    {
-        return lhs - rhs
-    }
-    
-    func multiplyOperation(lhs: Float, rhs:Float)->Float
-    {
-        return lhs * rhs
-    }
-    
-    func divideOperation(lhs: Float, rhs:Float)->Float
-    {
-        return lhs * rhs
-    }
-    
-    func Evaluate()
-    {
-        switch activeOperator
-        {
-        case "+":
-            result = addOperation(lhs: leftOperand, rhs: rightOperand)
-        case "-":
-            result = subtractOperation(lhs: leftOperand, rhs: rightOperand)
-        case "X":
-            result = multiplyOperation(lhs: leftOperand, rhs: rightOperand)
-        case "/":
-            result = divideOperation(lhs: leftOperand, rhs: rightOperand)
-        default:
-            result = 0.0
-        }
+    @IBAction func onNonOperatorPressed(_ sender: UIButton) {
         
-        print(result)
-    }
-    
-    @IBAction func operatorPressed(_ sender: UIButton )
-    {
-        let button = sender as UIButton
-        let currentInput = button.titleLabel!.text
-        let resultLabelText = calWorkings.text
-        
-        if(!haveLeftOperand)
-        {
-            haveLeftOperand = true
-            leftOperand = Float(resultLabelText!)!
-            resultLabelReady = false
-            
-        }
-        else
-        {
-            rightOperand = Float(resultLabelText!)!
-            haveRightOperand = true
-        }
-        
-        if(haveLeftOperand && haveRightOperand)
-        {
-            Evaluate()
-            leftOperand = result
-            rightOperand = 0.0
-            resultLabelReady = false
-        }
-        
-        switch currentInput
-        {
-        case "+":
-            activeOperator = "+"
-        case "-":
-            activeOperator = "-"
-        case "X":
-            activeOperator = "X"
-        case "/":
-            activeOperator = "/"
-        case "=":
-            Evaluate()
-        default:
-            print("")
-        }
-    }
-
-    
-    func addValuer (vals : String){
-        workings = workings + vals
-        calWorkings.text = workings
-    }
-    func clearValues(){
-        workings = ""
-        calWorkings.text = ""
-        
-    }
-    
-    
-    @IBAction func onNumberPressed(_ sender: UIButton) {
-        let button = sender as UIButton
-        let currentInput = button.titleLabel!.text
-        let resultLabelText = calWorkings.text
-        switch currentInput
-        {
-        case "0":
-            if(resultLabelText != "0")
-            {
-                addValuer(vals: "0")
-            }
-        case "1":
-            if(resultLabelText != "1")
-            {
-                addValuer(vals: "1")
-            }
-        case "2":
-            if(resultLabelText != "2")
-            {
-                addValuer(vals: "2")
-            }
-        case "3":
-            if(resultLabelText != "3")
-            {
-                addValuer(vals: "3")
-            }
-        case "4":
-            if(resultLabelText != "4")
-            {
-                addValuer(vals: "4")
-            }
-        case "5":
-            if(resultLabelText != "5")
-            {
-                addValuer(vals: "5")
-            }
-        case "6":
-            if(resultLabelText != "6")
-            {
-                addValuer(vals: "6")
-            }
-        case "7":
-            if(resultLabelText != "7")
-            {
-                addValuer(vals: "7")
-            }
-        case "8":
-            if(resultLabelText != "8")
-            {
-                addValuer(vals: "8")
-            }
-        case "9":
-            if(resultLabelText != "9")
-            {
-                addValuer(vals: "9")
-            }
-        case ".":
-            if(resultLabelText != ".")
-            {
-                addValuer(vals: "9")
-            }
+        switch sender.titleLabel!.text {
         case "Clear":
             clearValues()
+        case ".":
+          forDecimalPoint()
+        case "+/-":
+            forPlusMinusOperator()
+        default:
+            if(ResultLabel.text! == "0" || resetLabel){
+                ResultLabel.text = sender.titleLabel!.text!
+                resetLabel = false
+            }else{
+                if(ResultLabel.text!.count > 15){}
+                ResultLabel.text! += sender.titleLabel!.text!
+            }
+        }
+    }
+    
+    
+    @IBAction func onOperatorPressed(_ sender: UIButton) {
+        
+        clickedOperator = String(sender.tag)
+        
+        if(activeOperator == ""){
+            activeOperator = clickedOperator
+            print(activeOperator)
+            resetLabel = true;
+        }
+        
+        if (result != 0.0){return}
+        
+        if(leftOperand != 0.0){
+            rightOperand = Float(ResultLabel.text!)!
+        }else{
+            leftOperand = Float(ResultLabel.text!)!
+        }
+        
+        if(rightOperand == 0.0 && clickedOperator != "10"){return}
+        
+        switch activeOperator {
+        case "1":
+            result = leftOperand + rightOperand
+        case "2":
+            result = leftOperand - rightOperand
+        case "3":
+            result = leftOperand * rightOperand
+        case "4":
+            result = leftOperand / rightOperand
+        case "10":
+            result = leftOperand
         default:
             print("")
         }
+        
+        
+        leftOperand = result
+        rightOperand = 0.0
+        activeOperator = clickedOperator
+        result = 0.0
+        resetLabel = true
+        
+        ResultLabel.text! = "\(leftOperand)"
+        
     }
+    
+    
+    @IBAction func forBackSpace(_ sender: UIButton) {
+        if(!ResultLabel.text!.isEmpty){
+            ResultLabel.text!.removeLast()
+        }
+    }
+    
+    
+    func forDecimalPoint(){
+        if(!ResultLabel.text!.contains("."))
+        {
+            ResultLabel.text! += "."
+        }else if( !ResultLabel.text!.contains("0")){
+            ResultLabel.text! += "0."
+        }
+    }
+    
+    func forPlusMinusOperator(){
+        if(ResultLabel.text! != "0"){
+            if(!ResultLabel.text!.contains("-")){
+                ResultLabel.text!.insert("-", at: ResultLabel.text!.startIndex)
+            }else{
+                ResultLabel!.text!.remove(at: ResultLabel.text!.startIndex)
+            }
+        }
+    }
+    
+    func clearValues(){
+        ResultLabel.text! = "0"
+         leftOperand = 0.0 //for left operation
+         rightOperand = 0.0 //for right operation
+         result = 0.0 //for the last result of the operations
+         clickedOperator = ""
+         activeOperator = ""
+        resetLabel = true
+    }
+    
 }
-
